@@ -1,0 +1,14 @@
+resources:
+- name: src
+  type: git
+  source:
+    uri: https://github.com/ipfs/js-ipfs-api
+    branch: master
+
+jobs:
+- name: js-ipfs-api
+  plan:
+  - get: src
+    trigger: true
+  - task: install-and-test
+    file: tasks/js-install-and-test.yml

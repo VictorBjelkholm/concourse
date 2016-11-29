@@ -1,0 +1,22 @@
+---
+platform: linux
+
+inputs:
+  - name: src
+
+image_resource:
+  type: docker-image
+  source: 
+    repository: node
+    tag: "6"
+
+run:
+  path: sh
+  dir: src
+  args:
+    - -exec
+    - |
+      npm install npm@4.0.2
+      npm version
+      npm install
+      npm run test:node
