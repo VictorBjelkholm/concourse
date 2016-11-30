@@ -2,7 +2,7 @@ resources:
 - name: src
   type: git
   source:
-    uri: https://github.com/ipfs/js-ipfs-api
+    uri: https://github.com/ipfs/go-ipfs
     branch: master
 - name: concourse
   type: git
@@ -11,10 +11,11 @@ resources:
     branch: master
 
 jobs:
-- name: js-ipfs-api
+- name: go-ipfs
   public: true
   plan:
   - get: src
   - get: concourse
   - task: install-and-test
-    file: concourse/tasks/js-install-and-test.yml
+    file: concourse/tasks/go-ipfs-install-and-test.yml
+
