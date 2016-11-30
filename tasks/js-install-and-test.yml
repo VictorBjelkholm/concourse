@@ -2,7 +2,7 @@
 platform: linux
 
 inputs:
-  - name: {{src-path}}
+  - name: js-ipfs-api-src
 
 image_resource:
   type: docker-image
@@ -12,7 +12,7 @@ image_resource:
 
 run:
   path: sh
-  dir: {{src-path}}
+  dir: js-ipfs-api-src
   args:
     - -exec
     - |
@@ -20,6 +20,3 @@ run:
       npm version
       npm install
       npm run test:node
-
-params:
-  src-path: src

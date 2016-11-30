@@ -26,9 +26,5 @@ jobs:
   - get: concourse
   - task: go-ipfs
     file: concourse/tasks/go-ipfs-install-and-test.yml
-    params:
-      src-path: go-ipfs-src
   - task: js-ipfs-api
     file: concourse/tasks/js-install-and-test.yml
-    params:
-      src-path: js-ipfs-api-src

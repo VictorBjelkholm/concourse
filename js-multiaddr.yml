@@ -1,5 +1,5 @@
 resources:
-- name: src
+- name: js-multiaddr-src
   type: git
   source:
     uri: https://github.com/victorbjelkholm/js-multiaddr
@@ -8,13 +8,13 @@ resources:
 jobs:
 - name: js-multiaddr
   plan:
-  - get: src
+  - get: js-multiaddr-src
     trigger: true
   - task: install-and-test
     config:
       platform: linux
       inputs:
-        - name: src
+        - name: js-multiaddr-src
       image_resource:
         type: docker-image
         source: 
@@ -25,4 +25,4 @@ jobs:
       run:
         path: make
         args: ["test"]
-        dir: src
+        dir: js-multiaddr-src

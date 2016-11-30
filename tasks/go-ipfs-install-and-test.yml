@@ -2,7 +2,7 @@
 platform: linux
 
 inputs:
-  - name: {{src-path}}
+  - name: go-ipfs-src
     path: src/github.com/ipfs/go-ipfs
 
 image_resource:
@@ -20,6 +20,3 @@ run:
       cd $GOPATH/src/github.com/ipfs/go-ipfs
       make deps
       TEST_NO_FUSE=1 go test ./...
-
-params:
-  src-path: src

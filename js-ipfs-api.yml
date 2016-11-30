@@ -1,5 +1,5 @@
 resources:
-- name: src
+- name: js-ipfs-api-src
   type: git
   source:
     uri: https://github.com/ipfs/js-ipfs-api
@@ -14,7 +14,7 @@ jobs:
 - name: js-ipfs-api
   public: true
   plan:
-  - get: src
+  - get: js-ipfs-api-src
   - get: concourse
   - task: install-and-test
     file: concourse/tasks/js-install-and-test.yml
