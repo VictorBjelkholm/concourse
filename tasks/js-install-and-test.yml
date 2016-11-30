@@ -2,7 +2,7 @@
 platform: linux
 
 inputs:
-  - name: src
+  - name: {{src-path}}
 
 image_resource:
   type: docker-image
@@ -12,7 +12,7 @@ image_resource:
 
 run:
   path: sh
-  dir: src
+  dir: {{src-path}}
   args:
     - -exec
     - |
@@ -20,3 +20,6 @@ run:
       npm version
       npm install
       npm run test:node
+
+params:
+  src-path: src
